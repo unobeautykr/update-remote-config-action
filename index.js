@@ -6,10 +6,8 @@ function getInputMap() {
   const map = {};
 
   for (const key in process.env) {
-    // GitHub Actions uses INPUT_ prefix for inputs.
-    // Inputs with _ character are for internal use
-    if (key.startsWith("INPUT_") && key[6] !== "_") {
-      const inputKey = key.slice(6);
+    if (key.startsWith("key.")) {
+      const inputKey = key.slice(4);
       map[inputKey] = process.env[key];
     }
   }
