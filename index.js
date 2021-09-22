@@ -22,7 +22,7 @@ async function run() {
     const gsaKey = core.getInput("gsaKey");
     const inputs = getInputMap();
 
-    const crendentialFilePath = "/google-service-account-key.json";
+    const crendentialFilePath = "google-service-account-key.json";
     process.env.GOOGLE_APPLICATION_CREDENTIALS = crendentialFilePath;
     await fs.writeFile(crendentialFilePath, gsaKey);
 
