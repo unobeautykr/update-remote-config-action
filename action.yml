@@ -1,0 +1,10 @@
+# action.yml
+name: "Update Firebase RemoteConfig"
+description: "update firebase remoteconfig parameters"
+inputs:
+  gsaKey:
+    description: "GSA Key"
+    required: true
+runs:
+  using: "node12"
+  main: "dist/index.js"
