@@ -5,6 +5,9 @@ inputs:
   gsaKey:
     description: "GSA Key"
     required: true
+  projectId:
+    description: "Firebase Project Id"
+    required: true
 runs:
   using: "node12"
   main: "dist/index.js"

@@ -1,14 +1,15 @@
 const admin = require("firebase-admin");
 const fs = require("fs").promises;
 
-async function authenticate() {
+async function authenticate(projectId) {
   admin.initializeApp({
     credential: admin.credential.applicationDefault(),
+    projectId
   });
 }
 
-async function run(inputs) {
-  await authenticate();
+async function run(inputs, projectId) {
+  await authenticate(projectId);
 
   const remoteConfig = admin.remoteConfig();
   const template = await remoteConfig.getTemplate();
